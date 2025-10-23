@@ -4,6 +4,9 @@
  */
 package com.mycompany.redneuronal;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author matia
@@ -14,9 +17,12 @@ public class Cactus {
     public int posY = 260;
     public int posX = 600;
     static int[] alturasPosibles = {35, 40, 50};
+    public Image imagen;
     
     public Cactus(){
         this.height = alturasPosibles[(int)(Math.random() * alturasPosibles.length)];
+        imagen = new ImageIcon(getClass().getResource("/images/cactus.png")).getImage();
+
         this.posY = 300 - this.height;  // para mantenerlo apoyado en el suelo
     }
     

@@ -11,7 +11,7 @@ public class DinoGame extends JPanel implements ActionListener, KeyListener {
     private Timer timer;
     private Cactus cactus = new Cactus();
     private ArrayList<Dino> dinos = new ArrayList();
-    private int cantDinos = 300;
+    private int cantDinos = 1000;
     public int dinoWidth = 40;
     public int cantVivos = 0;
     public int lastCantVivos = 0;
@@ -58,8 +58,10 @@ public class DinoGame extends JPanel implements ActionListener, KeyListener {
             repaint();    
         }
         cactus.Mover(velocidadJuego);
-        if(cantVivos > 0 && velocidadJuego<MAX_VELOCITY-0.1f){
-            velocidadJuego = velocidadJuego + 0.01f;
+        if(cantVivos > 0){
+            if(velocidadJuego<MAX_VELOCITY){
+                velocidadJuego = velocidadJuego + 0.01f;
+            }
         }
         else{
             this.resetGame();
@@ -86,13 +88,16 @@ public class DinoGame extends JPanel implements ActionListener, KeyListener {
         // Ejemplo de dino
         for(Dino dino : dinos){
             if(dino.isAlive()){
-                g.setColor(dino.color);
-                g.fillRect(dino.posX, dino.posY, dinoWidth, dino.height);
+                g.drawImage(dino.imagen, dino.posX, dino.posY, dino.width, dino.height, this);
+               // g.setColor(dino.color);
+                //g.fillRect(dino.posX, dino.posY, dinoWidth, dino.height);
             }
         }
         // Ejemplo de obstáculo
-        g.setColor(Color.RED);
-        g.fillRect(cactus.posX, cactus.posY, cactus.width, cactus.height); // cactus (placeholder)
+        g.drawImage(cactus.imagen, cactus.posX, cactus.posY, cactus.width, cactus.height, this);
+
+        //g.setColor(Color.RED);
+        //g.fillRect(cactus.posX, cactus.posY, cactus.width, cactus.height); // cactus (placeholder)
     }
 
     @Override
