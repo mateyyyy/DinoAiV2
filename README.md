@@ -16,3 +16,7 @@ En la **primera generación evolutiva**, los dinosaurios ya muestran una mejora 
 En la **segunda generación**, el Dino **ya aprendió completamente a jugar**: alcanza la **velocidad máxima** y **no muere nunca**.
 
 ![Generación 2](https://github.com/user-attachments/assets/8e6a4815-acc6-4ea3-983c-fa03f3de9a35)
+
+---
+
+Para este proyecto se desarrolló **el juego del dinosaurio de Google desde cero**, junto con la **implementación completa de las redes neuronales**.
